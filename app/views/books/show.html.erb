@@ -28,7 +28,7 @@
 						<% if @show_book.favorited_by?(current_user) %>
 						  	<%= link_to book_favorites_path(@show_book), method: :delete do %>
 							<i class="fa fa-heart" aria-hidden="true" style="color: red;"></i>
-						  	<%= @show_book.favorites.count %> いいね</span>
+						  	<%= @show_book.favorites.count %> いいね
 						  	<% end %>
 						<% else %>
 						  	<%= link_to book_favorites_path(@show_book), method: :post do %>
