@@ -27,8 +27,8 @@
 					<td>
 						<% if @show_book.favorited_by?(current_user) %>
 						  	<%= link_to book_favorites_path(@show_book), method: :delete do %>
-						  	<i class="fa fa-heart" aria-hidden="true" style="color: red;"></i>
-						  	<%= @show_book.favorites.count %> いいね
+							<i class="fa fa-heart" aria-hidden="true" style="color: red;"></i>
+						  	<%= @show_book.favorites.count %> いいね</span>
 						  	<% end %>
 						<% else %>
 						  	<%= link_to book_favorites_path(@show_book), method: :post do %>
@@ -77,17 +77,6 @@
     		<!-- ---------------------------------------- -->
 
 			<!-- コメント投稿フォーム -->
-
-			<!-- エラーメッセージの表示 -->
-			<% if @post_comment.errors.any? %>
-				<h3><%= @post_comment.errors.count %>errors prohibited this obj from being saved:</h3>
-				<ul>
-					<% @post_comment.errors.full_messages.each do |message| %>
-					<li><%= message %></li>
-					<% end %>
-				</ul>
-			<% end %>
-			<!-- --------------- -->
 			<%= form_for [@show_book, @post_comment] do |f| %>
     			<div class="row">
 			        <div class="col-sm-12">
